@@ -1,0 +1,158 @@
+
+<html>  
+<head>  
+<script type="text/javascript" src="app.js">
+    </script>  
+<link rel="stylesheet" href="styles.css">
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+
+</head>
+<body onload=assignment8()> 
+
+
+<div>
+<h2 class="section">Golden State Realities: A Comprehensive Analysis of California's Housing Landscape</h2>
+Housing has long been a hot topic in California, given the state's ongoing affordability crisis and the rapid growth of its population. In recent years, the escalating median house prices and their relationship with factors such as income, age, and population distribution have garnered considerable attention from academics, policymakers, and the general public. In order to gain a deeper understanding of the complex dynamics driving California's housing market, it is crucial to examine how these variables interact across the state's various counties.
+
+"Golden State Realities: A Comprehensive Analysis of California's Housing Landscape" is a data visualization project that employs D3.js to explore these relationships in an academically rigorous and visually engaging manner. By presenting a detailed and interactive visualization of the distribution of house prices in relation to income, age, and population, this project aims to elucidate the underlying patterns and trends that shape California's housing landscape. Through such an analysis, we hope to contribute to the growing body of knowledge surrounding this critical issue and inform the development of more effective and equitable housing policies and strategies in the future.
+<br>
+<div>
+<h3>Part 1:</h3>
+<h4>Population and House Price Relationship in California Counties</h4>
+Firstly, we would like to focus on the relationship between population and median house prices across California counties. Understanding how population size and distribution impact house prices is crucial for a comprehensive analysis of the housing market. By using a scatter plot, we aim to reveal any existing patterns or trends that may inform stakeholders about the forces shaping house prices in areas with varying population sizes.
+<div id="q1">
+    <br>For Color Scheme, given the large number of data points, we decided to use a binary color scheme to distinguish between normal data points and outliers.
+    Normal data points here are represented by blue color, while while outliers would be highlighted using a contrasting color, which is red.
+    This color choice allows for a clearer visual distinction between the majority of data points and the more extreme cases, enabling users to focus on the key trends and relationships within the data.
+    The primary reason for this choice is to improve the readability of the scatter plot and help users identify patterns more effectively. When dealing with a large number of data points, using too many colors can lead to visual clutter and make it difficult for users to discern meaningful relationships. By simplifying the color scheme and focusing on the distinction between normal data points and outliers, we can draw attention to the most important aspects of the data while maintaining a clean and accessible visualization.
+    <br> 
+    For the marks, we use uniformly sized circles to represent each county. By employing circles of the same size, we can emphasize the relationship between population and median house prices without introducing additional visual complexity. This choice of marks allows users to focus on the patterns and trends emerging from the data, ensuring a clear and comprehensible visualization.
+    <br>
+    For channels, the scatter plot's y-axis will represent the population, while the x-axis will represent the median house price. By using these channels, we can effectively communicate the relationship between population and house prices across California counties. 
+    <br>
+</div>
+    <div id="q1_plot" class="center_plot">
+        <div>
+            <input type="range" min="0" max="100" value="50" id="slider">
+            <label for="slider">Zoom</label>
+        </div>
+</div> 
+    <br> The scatter plot reveals a strong density of data points for California counties with a population of less than 5,000 and median house prices between 50,000 and 450,000 USD. This suggests that a significant proportion of smaller-population counties have moderate house prices, possibly due to factors such as lower demand and rural/suburban characteristics.
+
+    In contrast, areas outside this dense cluster, with either lower or higher house prices and a population greater than 5,000, exhibit lower density. This indicates that such combinations are less common, possibly due to urbanization or affluent neighborhoods with higher demand and competition.
+    
+    This observation highlights the importance of understanding the relationship between population size and housing prices in California's housing market, providing insights to inform future housing policies and strategies.
+</div>
+    
+<div>
+<h3>Part 2:</h3>
+<h4>Ocean Proximity and Average House Price in California Counties</h4> 
+<div id="q2">
+    The second part of "Golden State Realities: A Comprehensive Analysis of California's Housing Landscape" examines the relationship between ocean proximity and average house prices across California counties. The accessibility of a county to the ocean can have a significant impact on property values, as coastal areas are often associated with higher demand and a more desirable living environment. In this section, we use a bar chart to explore how average house prices vary with different levels of ocean proximity.The chart includes a sort button that allows the user to sort the bars by average house price in ascending or descending order. 
+    <br> For the color scheme, we have chosen to use the Yellow-Green-Blue (YlGnBu) color scale. This choice provides a visually appealing range of colors, from light yellow-green to dark blue, which can effectively represent the different categories of ocean proximity. By using a sequential color scale, we ensure that the visualization remains cohesive and visually accessible to users.
+    <br> For the marks, we use rectangular bars to represent each category of ocean proximity. The height of each bar corresponds to the average house price within that category. This choice of marks allows users to quickly perceive the differences in average house prices across various levels of ocean proximity and easily compare the values between categories.
+    <br> The bar chart's x-axis will represent the different categories of ocean proximity, while the y-axis will represent the average house price. By using these channels, we can effectively communicate the relationship between ocean proximity and average house prices across California counties. Additionally, providing labels for each bar can offer users a clear understanding of the exact average house prices for each ocean proximity category. The sort button allows the user to sort the bars by average house price in ascending or descending order.
+
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+    <div id="q2_plot" class="center_plot">
+		<br><br>
+        <button id="sort_button">Sort</button>
+    </div>
+
+    <br>
+    <br>
+    Above graph indicates a notable difference in average house prices across various ocean proximity categories. Notably, properties located on islands have the highest average house prices, with values exceeding 350,000 USD. In contrast, inland areas exhibit the lowest average house prices, hovering around 125,000 USD.
+    <br> This observation suggests that ocean proximity plays a significant role in determining property values in California. Properties on islands, which are likely to offer exclusive access to coastal amenities and a more desirable living environment, command a premium in the housing market. On the other hand, inland properties, which are typically further away from the ocean and may lack the same appeal or access to coastal amenities, tend to have lower average house prices.
+    Understanding these trends can provide valuable insights for potential homebuyers, investors, and policymakers, as it highlights the impact of geographical factors on housing prices and affordability in California's diverse real estate landscape.
+</div>    
+
+<div>
+<h3>Part 3:</h3>
+<h4>Price Ranges and the Stacked Composition of Age, Income, and Household Count</h4>
+For this part, want to we investigate the relationship between house price ranges and the stacked composition of age, income, and household count. By dividing house prices into subclasses, such as 0-100k and 100k-200k, we can better understand how the median age of houses, median household income, and total number of households in a block are distributed across different price ranges. To visualize this relationship, we employ a stacked bar chart, which allows users to observe how the composition of these factors changes as house prices increase.
+<br>
+For color choice, We have chosen the colors Light Steel Blue, Grayish Slate Blue, and Moderate Purple for this visualization. These colors provide a visually appealing and distinct contrast for each of the three components: age, income, and household count, making it easy for users to differentiate between them.
+<br>
+For the marks, we also use rectangular bars, with each bar representing a specific house price range. Within each bar, the height of the segments corresponds to the values of age, income, and household count. This choice of marks allows users to quickly perceive the distribution of these factors across different price ranges and to compare the values between categories.
+<br>
+For channel, The x-axis of the stacked bar chart represents the house price ranges, while the y-axis represents the combined values of age, income, and household count. By using these channels, we can effectively communicate the relationship between house price ranges and the stacked composition of these factors. Additionally, providing labels and a legend can help users better understand the exact values and categories represented within the visualization.
+<div id="q3">
+    </div>
+    <div id="q3_plot" class="center_plot">
+    </div>
+<br>
+The stacked bar charts reveal a pattern of increasing values for age, income, and household count as house prices rise. This observation suggests that higher-priced houses tend to be associated with older properties, higher median household incomes, and a greater number of households within a block. This trend underscores the importance of understanding the interplay between these factors and house prices in California's diverse housing market.
+</div>   
+
+<div>
+    <h3>Question 4:</h3>
+    <h4>House Price Distribution Across California </h4>
+    In part 4, we use a bubble map to visualize the distribution of house prices across California. This geographic representation provides users with a comprehensive view of the housing market and highlights regional patterns, trends, and outliers. By combining this visualization with a tooltip feature, users can interactively explore the house prices of individual counties and gain a deeper understanding of the housing landscape.
+    <br>
+    For the marks, we use circles to represent each population block, with the size of each circle corresponding to the house price. The colors of the circles are determined by the outlier status, with normal house prices colored as Royal Blue and outliers as Vivid Pink. The map is filled with a neutral color (Light Gray), and the stroke is set to a darker gray to outline the boundaries between counties.
+    <br>
+    In the bubble map, the spatial distribution of house prices is represented by the x and y coordinates of each circle. The size of the circles is determined by the house price value, and the color represents the outlier status, as determined by the given formula. Additionally, the tooltip feature provides users with information on the county name when they hover their mouse over a circle.
+    <br>
+    <div id="q4">
+    
+        </div>
+        <div id="q4_plot" class="center_plot">
+            <div id="tooltip" class="tooltip"></div>
+        </div>
+    <br>
+    The bubble map reveals high-density areas with more expensive house prices, such as Los Angeles, San Diego, and the Bay Area. Outliers, or counties with exceptionally high or low house prices, are also predominantly found within these regions. Factors contributing to the high housing prices in these areas include strong demand for housing due to thriving job markets, limited land availability and strict land use regulations, and higher costs of living.
+
+The high house prices in Los Angeles and the Bay Area, for example, can be attributed to their status as major economic centers, attracting a large workforce, and increasing demand for housing. San Diego's high housing prices can be linked to its desirable coastal location and strong presence in the technology and biotech industries.
+
+This visualization provides a comprehensive view of the housing market in California, highlighting regional patterns and trends, and allowing users to explore the spatial distribution of house prices. By understanding these patterns, stakeholders can make more informed decisions about housing policies and strategies that address the unique challenges faced by different regions across the state.
+    </div>  
+
+<div>
+    <h3>Part 5:</h3>
+    <h4>Heatmap of Median House Price by Ocean Proximity and Population</h4>
+    In the final part, we present a heatmap that explores the relationship between ocean proximity, population subclasses, and median house prices. This visualization allows users to examine how the housing market varies across different levels of ocean proximity and population sizes. By incorporating a tooltip feature, users can interactively explore the median house prices for each cell and gain a deeper understanding of the housing landscape.
+    <br>
+    For the marks, we recommend using rectangular cells to represent each combination of ocean proximity and population subclass. The color of each cell is determined by the median house price using the "viridis" color scheme, ranging from dark purple for low values to bright yellow-green for high values.
+    <br>
+    The x-axis of the heatmap represents ocean proximity categories, while the y-axis represents population subclasses, such as 0-3000 and 3000-4000. The color of each cell is determined by the median house price, which is mapped to the "viridis" color scheme. Additionally, the tooltip feature provides users with information on the median house price when they hover their mouse over a cell.
+    <br>
+    <br>
+    <div id="q5">
+        
+        </div>
+        <div id="q5_plot" class="center_plot">
+        </div>
+    <br>
+    The heatmap reveals that the island category has only one cell with the lowest population, and its median house value is 380,440. In contrast, the ocean proximity category " less than 1h Ocean" has cells filled up across all population levels, with the highest median house value being 134,400.
+    <br>
+    The difference in median house prices among ocean proximity categories can be attributed to factors such as location desirability, access to amenities, and land availability. Coastal areas and areas within a one-hour drive from the ocean are generally more desirable and have higher demand, leading to higher house prices. The island category, although unique in its location, has a limited housing market with a small population, which may contribute to its relatively high median house price. On the other hand, inland areas might have lower house prices due to lower demand and higher land availability.
+    <br>
+    This heatmap provides a comprehensive view of the relationship between ocean proximity, population subclasses, and median house prices in California, revealing patterns that can help stakeholders make informed decisions about housing policies and strategies tailored to the unique challenges faced by different regions across the state.
+    </div>  
+
+<h3>Conclusion</h3>
+In "Golden State Realities: A Comprehensive Analysis of California's Housing Landscape," we employed various data visualization techniques to gain insights into the complex housing market in California. Through a series of visualizations, including scatter plots, bar charts, stack bar charts, bubble maps, and heatmaps, we examined the relationships between house prices, population, age, income, ocean proximity, and geographic distribution.
+<br>
+Our analysis revealed several key findings:
+<br>
+1. In the scatter plot, we observed that the majority of the data points were densely clustered in areas with house prices between 50k and 450k and populations under 5k, indicating a concentration of housing in this price and population range.
+<br>
+2. The bar chart displayed distinct differences in average house prices among ocean proximity categories, with island locations having the highest average house prices and inland locations having the lowest.
+<br>
+3. The stack bar chart showed that age, income, and household count values increased along with house prices, reflecting the relationship between these factors and housing costs.
+<br>
+4. The bubble map highlighted high-density areas with more expensive house prices, such as Los Angeles, San Diego, and the Bay Area. Outliers were predominantly found within these regions, indicating that factors like strong demand, limited land availability, and higher costs of living contribute to the high housing prices in these areas.
+<br>
+5. The heatmap demonstrated the varying median house prices across different ocean proximity categories and population subclasses, with the island category having a relatively high median house price and the "less than 1hr Ocean" category having the highest variation in median house prices across population levels.
+<br>
+By leveraging data visualization techniques, we have gained a deeper understanding of the housing landscape in California, unveiling patterns and trends that can help stakeholders make informed decisions about housing policies and strategies. This comprehensive analysis can serve as a foundation for addressing the unique challenges faced by different regions across the state and guiding future efforts towards creating a more balanced and accessible housing market for all Californians.
+</body>  
+</html>  
